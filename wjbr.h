@@ -8,6 +8,7 @@
 #define true  1
 #define false 0
 
+#ifdef c89types
 typedef unsigned char      uchar;
 typedef unsigned short     ushort;
 typedef unsigned int       uint;
@@ -15,14 +16,41 @@ typedef unsigned long      ulong;
 typedef unsigned long long ulonglong;
 
 typedef unsigned char      u8;
-typedef unsigned short     u16;
-typedef unsigned int       u32;
-typedef unsigned long long u64;
+typedef signed   char      i8;
 
-typedef signed char      i8;
-typedef signed short     i16;
-typedef signed int       i32;
-typedef signed long long i64;
+typedef unsigned short     u16;
+typedef signed   short     i16;
+
+typedef unsigned int       u32;
+typedef signed   int       i32;
+
+typedef unsigned long long u64;
+typedef signed   long long i64;
+
+typedef float    f32;
+typedef double   f64;
+#endif /* c89types */
+
+#ifdef c99types
+typedef uint8_t  u8;
+typedef int8_t   i8;
+
+typedef uint16_t u16;
+typedef int16_t  i16;
+
+typedef uint32_t u32;
+typedef int32_t  i32;
+
+typedef uint64_t u64;
+typedef int64_t  i64;
+
+typedef float    f32;
+typedef double   f64;
+#endif /* c99types */
+
+
+
+
 
 #define ESC "\x1b"
 #define BLACK_TEXT "30"
